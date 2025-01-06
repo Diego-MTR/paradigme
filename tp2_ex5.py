@@ -2,7 +2,7 @@ import csv
 from functools import reduce
 
 # Lire les données du fichier CSV
-with open('C:\\Users\\diego\\OneDrive\\BACHELOR\\Cours\\Paradigmes de programmation\\paradigme\\employes.csv', mode='r', encoding='utf-8-sig') as file:
+with open('employes.csv', mode='r', encoding='utf-8-sig') as file:
     reader = csv.DictReader(file, delimiter=';')
     employes = list(reader)
 
