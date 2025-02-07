@@ -46,7 +46,7 @@ def compter_mots_longs(liste_mots):
 def compose(f, g):
     return lambda x: f(g(x))
 
-# Question 5.1
+# Question 5.2
 carre_plus_un = compose(lambda x: x + 1, lambda x: x ** 2)
 
 # Exercice 6 : Utilisation Avancée d'Expressions Lambda
@@ -71,11 +71,11 @@ def memoise(f):
 # Question 7.2
 @memoise
 def factorielle(n):
-    return 1 if n == 0 else n * factorielle(n - 1)
+    return 1 if n == 0 else n * factorielle(n - 1) 
 
 @memoise
 def fibonacci(n):
-    return n if n <= 1 else fibonacci(n - 1) + fibonacci(n - 2)
+    return n if n <= 1 else fibonacci(n - 1) + fibonacci(n - 2) 
 
 # Exercice 8 : Application Pratique
 
@@ -83,5 +83,8 @@ def calculateDiscount(prix, reduction):
     return sum(map(reduction, prix))
 
 # Question 8.2
-prix_produits = [100, 200, 300]
-montant_total_apres_reduction = calculateDiscount(prix_produits, lambda p: p * 0.8)
+
+prix_produits = [100, 200, 300] # Prix des produits
+reduction_20 = lambda x: x * 0.8 # 20% de réduction
+montant_total_apres_reduction = calculateDiscount(prix_produits, reduction_20) 
+print(montant_total_apres_reduction) # 480.0
